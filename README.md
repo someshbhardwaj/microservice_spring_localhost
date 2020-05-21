@@ -1,12 +1,39 @@
 # microservice_spring_localhost
 
-Tech Stack
-Currency Exchange MySQL Microservice  and Currency Conversion Microservice talks via using Zuul API Gateway.
-Zuul API Gateway uses Eureka Name Server.
-Distributed Tracing done through Zipkin and Sleuth
-Hystrix used for Fault Tolerance,
-MySQL DB is used in the Currency Exchange MySQL Microservice => Exchange Value table is created using.
+## Brief about the code or Tech Stack:
+* Currency Exchange MySQL Microservice  and Currency Conversion Microservice talks via using Zuul API Gateway.
 
+* Zuul API Gateway uses Eureka Name Server.
+
+* Distributed Tracing done through Zipkin and Sleuth
+
+* Hystrix used for Fault Tolerance,
+
+* MySQL DB is used in the Currency Exchange MySQL Microservice => Exchange Value table is created using.
+
+## Prerequisite
+* One has to download the code.
+
+* MySQL should be working.
+
+* Create DB currency_exchange_value_db and table in it exchange_value
+
+* Code for the same is in link: 
+![DB Script](https://github.com/someshbhardwaj/microservice_spring_localhost/blob/master/Exchange_value.sql)
+
+## For Distributed Tracing:
+ Rabbit MQ is used. 
+ Please download it at link:   ![RabbitMQ Dowload](https://www.rabbitmq.com/install-windows.html)
+ Please install ErLang before installing rabbitmq.
+ Once you have installed Rabbit MQ
+
+For Running Rabbit MQ
+In the console, go to the location where you have downloaded *zipkin-server-2.7.0-exec.jar
+Execute below command (for Windows 10):
+
+> set RABBIT_URI=amqp://localhost
+
+> java -jar zipkin-server-2.7.0-exec.jar
 
 Eureka Name Server:
 
@@ -30,7 +57,7 @@ Distributed Tracing using Zipkin
 Checking code flow using  Zipkin and sleuth distributed tracing
 ![Code flow using Zipkin](https://github.com/someshbhardwaj/microservice_spring_localhost/blob/master/Zipkin_Flow.png)
 
-## URL
+## URL to test the code.
 Zipkin	http://localhost:9411/zipkin/
 
 Currency Converter Service - Direct Call	http://localhost:8100/currency-converter/from/USD/to/INR/quantity/10
